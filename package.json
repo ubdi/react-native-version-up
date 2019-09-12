@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gustarus/react-native-version-up.git"
+    "url": "git+https://github.com/ubdi/react-native-version-up.git"
   },
   "keywords": [
     "react native version",
