@@ -56,7 +56,7 @@ const versionUp = async config => {
   log.info(`- ios project (${pathsToPlists.join(", ")});`, 1);
   log.info(`- android project (${pathToGradle}).`, 1);
 
-  log.notice(`\nThe version will be changed:`);
+  log.notice(`\nThe build version will be changed:`);
   log.notice(`- from: ${versionCurrent} (${buildCurrent});`, 1);
   log.notice(`- to:   ${version} (${build}).`, 1);
 
@@ -99,6 +99,9 @@ const versionUp = async config => {
       );
     })
     .then(() => {
+      if (config.skipBuildIncrease) {
+        return log.info("Skipping build increase...");
+      }
       log.info("Updating version in android project...", 1);
 
       helpers.changeVersionAndBuildInGradle(pathToGradle, version, build);
